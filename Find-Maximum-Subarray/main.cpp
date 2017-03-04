@@ -104,5 +104,7 @@ int main(int argc, char** argv)
     int max_gain = std::get<2>(maximum_subarray);
 
     std::cout << "Maximum subarray: Buy after day " << buy_day << " at " << stock_prices[buy_day] << ", sell after day " << sell_day << " at " << stock_prices[sell_day] << ". Max gain=" << std::get<2>(maximum_subarray) << std::endl;
+
+    return 0;
 }
 
