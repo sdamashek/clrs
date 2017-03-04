@@ -41,11 +41,11 @@ std::tuple<int, int, T> find_maximum_subarray(std::vector<T> A, int low, int hig
     }
 
     else {
-        int mid = (low + high) / 2;
+        const int mid = (low + high) / 2;
 
-        std::tuple<int, int, T> left_res = find_maximum_subarray(A, low, mid);
-        std::tuple<int, int, T> right_res = find_maximum_subarray(A, mid + 1, high);
-        std::tuple<int, int, T> cross_res = find_max_crossing_subarray(A, low, mid, high);
+        const std::tuple<int, int, T> left_res = find_maximum_subarray(A, low, mid);
+        const std::tuple<int, int, T> right_res = find_maximum_subarray(A, mid + 1, high);
+        const std::tuple<int, int, T> cross_res = find_max_crossing_subarray(A, low, mid, high);
         
         if (std::get<2>(left_res) >= std::get<2>(right_res) && std::get<2>(left_res) >= std::get<2>(cross_res)) {
             return left_res;
@@ -78,8 +78,8 @@ std::vector<T> find_differences_vector(std::vector<T> A)
 template <typename T>
 std::tuple<int, int, T> find_best_investment(std::vector<T> stock_prices)
 {
-    std::vector<int> differences_vector = find_differences_vector(stock_prices);
-    std::tuple<int, int, T> res = find_maximum_subarray(differences_vector, 0, differences_vector.size() - 1);
+    const std::vector<int> differences_vector = find_differences_vector(stock_prices);
+    const std::tuple<int, int, T> res = find_maximum_subarray(differences_vector, 0, differences_vector.size() - 1);
 
     return std::make_tuple(std::get<0>(res), std::get<1>(res) + 1, std::get<2>(res));
 }
