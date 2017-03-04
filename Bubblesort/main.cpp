@@ -7,10 +7,10 @@
 template <typename T>
 void bubblesort(std::vector<T>& A)
 {
-    for (int i = 0; i < A.size() - 1; i++) {
-        for (int j = A.size() - 1; j >= i + 1; j--) {
-            if (A[j] < A[j - 1]) {
-                std::iter_swap(A.begin() + j, A.begin() + j - 1);
+    for (auto i = A.begin(); i != A.end() - 1; i++) {
+        for (auto j = A.end() - 1; j != A.begin(); j--) {
+            if (*j < *(j - 1)) {
+                std::iter_swap(j, j - 1);
             }
         }
     }
