@@ -6,7 +6,7 @@
 
 
 template <typename T>
-std::tuple<int, int, T> find_max_crossing_subarray(std::vector<T> A, int low, int mid, int high) // inclusive in low and high
+std::tuple<int, int, T> find_max_crossing_subarray(std::vector<T> A, const int low, const int mid, const int high) // inclusive in low and high
 {
     T left_sum = std::numeric_limits<T>::min();
     T right_sum = std::numeric_limits<T>::min();
@@ -34,7 +34,7 @@ std::tuple<int, int, T> find_max_crossing_subarray(std::vector<T> A, int low, in
 }
 
 template <typename T>
-std::tuple<int, int, T> find_maximum_subarray(std::vector<T> A, int low, int high) // inclusive in low and high
+std::tuple<int, int, T> find_maximum_subarray(std::vector<T> A, const int low, const int high) // inclusive in low and high
 {
     if (high == low) {
         return std::make_tuple(low, high, A[low]); // only one element
