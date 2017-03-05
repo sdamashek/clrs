@@ -19,5 +19,4 @@ namespace utils {
 
         return v;
     }
-
 }
